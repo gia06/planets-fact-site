@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import bgImage from "./assets/background-stars.svg";
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Antonio&family=League+Spartan:wght@400;700&display=swap');
   * {
     box-sizing: border-box;
     padding: 0;
@@ -14,11 +13,14 @@ const GlobalStyles = createGlobalStyle`
     height: 100vh;
     background-color: #070724;
     background-image: url(${bgImage});
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 
   a {
     text-decoration: none;
-}
+  }
 
 `;
 
