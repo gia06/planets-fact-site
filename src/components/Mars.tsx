@@ -2,12 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Mars() {
-  return (
-    <div>
-      Mars
-      <Link to="/earth">Earth</Link>
-    </div>
-  );
+  return <div>Mars</div>;
 }
 
 export default Mars;
