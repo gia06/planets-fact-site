@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import bgImage from "./assets/background-stars.svg";
 
 const GlobalStyles = createGlobalStyle`
+
   * {
     box-sizing: border-box;
     padding: 0;

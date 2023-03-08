@@ -18,5 +18,6 @@ export interface PlanetsData {
   revolution: string;
   radius: string;
   temperature: string;
+  color: string;
   images: Images;
 }
