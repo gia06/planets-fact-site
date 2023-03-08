@@ -4,8 +4,9 @@ import useFetch from "../hooks/useFetch";
 import burgerIcon from "../assets/icon-hamburger.svg";
 import { useState } from "react";
 import { LinkContainerProps } from "../type/stylesType";
+import { NavBarProps } from "../type/navBarProps";
 
-function Navbar() {
+function Navbar({ setShowBurgerMenu }: NavBarProps) {
   const { planetsData } = useFetch();
   const showBurgerMenu = useState<boolean>(false);
 
@@ -29,7 +30,11 @@ function Navbar() {
         ))}
       </PlanetsContainer>
 
-      <BurgerIcon src={burgerIcon} alt="burger icon" />
+      <BurgerIcon
+        src={burgerIcon}
+        alt="burger icon"
+        onClick={() => setShowBurgerMenu((value) => !value)}
+      />
     </NavbarContainer>
   );
 }
@@ -39,9 +44,7 @@ export default Navbar;
 const NavbarContainer = styled.div`
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
   justify-content: space-between;
-  /* align-items: center; */
   width: 100%;
   height: 86px;
   padding: 0px 41px 0px 32px;
@@ -89,7 +92,7 @@ const PlanetsContainer = styled.div`
     font-family: "League Spartan";
     font-style: normal;
     font-weight: 700;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 25px;
     text-transform: uppercase;
   }

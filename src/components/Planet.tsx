@@ -5,7 +5,16 @@ function Planet() {
   const planet = pathname.slice(1);
   console.log(planet);
 
-  return <div style={{ color: "red" }}>{planet}</div>;
+  return (
+    <div
+      style={{
+        color: "red",
+        fontSize: "11px",
+      }}
+    >
+      {planet}
+    </div>
+  );
 }
 
 export default Planet;
