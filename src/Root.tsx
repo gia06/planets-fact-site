@@ -11,9 +11,14 @@ function Root() {
   return (
     <>
       <GlobalStyles />
-      <Navbar setShowBurgerMenu={setShowBurgerMenu} />
+      <Navbar
+        showBurgerMenu={showBurgerMenu}
+        setShowBurgerMenu={setShowBurgerMenu}
+      />
       <Outlet />
-      {showBurgerMenu ? <BurgerMenu /> : null}
+      {showBurgerMenu ? (
+        <BurgerMenu setShowBurgerMenu={setShowBurgerMenu} />
+      ) : null}
     </>
   );
 }

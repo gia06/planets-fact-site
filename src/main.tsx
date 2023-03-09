@@ -8,7 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Root from "./Root";
-import Planet from "./components/Planet";
+import Planet from "./pages/Planet";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

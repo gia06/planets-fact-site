@@ -1,15 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import useFetch from "../hooks/useFetch";
-import burgerIcon from "../assets/icon-hamburger.svg";
-import { useState } from "react";
 import { LinkContainerProps } from "../type/stylesType";
 import { NavBarProps } from "../type/navBarProps";
+import BurgerIcon from "../burger/BurgerIcon";
 
-function Navbar({ setShowBurgerMenu }: NavBarProps) {
+function Navbar({ showBurgerMenu, setShowBurgerMenu }: NavBarProps) {
   const { planetsData } = useFetch();
-  const showBurgerMenu = useState<boolean>(false);
-
   const route = useLocation().pathname.slice(1);
 
   return (
@@ -31,9 +28,8 @@ function Navbar({ setShowBurgerMenu }: NavBarProps) {
       </PlanetsContainer>
 
       <BurgerIcon
-        src={burgerIcon}
-        alt="burger icon"
-        onClick={() => setShowBurgerMenu((value) => !value)}
+        showBurgerMenu={showBurgerMenu}
+        setShowBurgerMenu={setShowBurgerMenu}
       />
     </NavbarContainer>
   );
@@ -136,11 +132,11 @@ const LinkContainer = styled.div<LinkContainerProps>`
   }
 `;
 
-const BurgerIcon = styled.img`
-  display: none;
+// const BurgerIcon = styled.img`
+//   display: none;
 
-  @media (max-width: 680px) {
-    display: flex;
-    align-self: center;
-  }
-`;
+//   @media (max-width: 680px) {
+//     display: flex;
+//     align-self: center;
+//   }
+// `;
