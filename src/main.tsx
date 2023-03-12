@@ -10,9 +10,17 @@ import {
 import Root from "./Root";
 import Planet from "./pages/Planet";
 
+const ErrorElement = () => <h1>there is error</h1>;
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/*" element={<Root />}>
+      {/* <Route
+        path="/:planetName"
+        element={<Planet />}
+        loader={loadSinglePlanet}
+      /> */}
+
       <Route path="Mercury" element={<Planet />} />
       <Route path="venus" element={<Planet />} />
       <Route path="Earth" element={<Planet />} />

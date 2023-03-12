@@ -3,7 +3,7 @@ import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import BurgerMenu from "./components/BurgerMenu";
+import BurgerMenu from "./components/burger/BurgerMenu";
 
 function Root() {
   const [showBurgerMenu, setShowBurgerMenu] = useState<boolean>(false);
@@ -15,10 +15,10 @@ function Root() {
         showBurgerMenu={showBurgerMenu}
         setShowBurgerMenu={setShowBurgerMenu}
       />
-      <Outlet />
       {showBurgerMenu ? (
         <BurgerMenu setShowBurgerMenu={setShowBurgerMenu} />
       ) : null}
+      <Outlet />
     </>
   );
 }

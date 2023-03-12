@@ -1,30 +1,35 @@
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+import PlanetOptionsMobile from "../components/PlanetOptionsMobile";
+import useCurrentPlanet from "../hooks/useCurrentPlanet";
+import { HighlightProps } from "../type/stylesType";
+import image from "../assets/planet-mercury.svg";
 
 function Planet() {
-  const { pathname } = useLocation();
-  const planet = pathname.slice(1);
-  console.log(planet);
+  const planet = useLocation().pathname.slice(1);
+
+  const [option, setOption] = useState<string>("overview");
+  const { currentPlanet, imgPath } = useCurrentPlanet(planet, option);
+
+  // console.log(imgPath);
+
+  // const filterOptions = (option: string) => {
+  //   switch (option) {
+  //     default:
+  //       return imgPath?.planet.replace(".", "src");
+  //     case "structure":
+  //       return imgPath?.internal.replace(".", "src");
+  //     case "structure":
+  //       return imgPath?.geology.replace(".", "src");
+  //   }
+  // };
 
   return (
     <div>
-      <PlanetOptions>
-        <Option>
-          <h2>Overview</h2>
-          <Highlight></Highlight>
-        </Option>
+      <PlanetOptionsMobile option={option} setOption={setOption} />
 
-        <Option>
-          <h2>Structure</h2>
-          <Highlight></Highlight>
-        </Option>
-
-        <Option>
-          <h2>Surface</h2>
-          <Highlight></Highlight>
-        </Option>
-      </PlanetOptions>
-
+      {imgPath ? <PlanetImage path={imgPath} /> : null}
       {planet}
     </div>
   );
@@ -32,37 +37,13 @@ function Planet() {
 
 export default Planet;
 
-const PlanetOptions = styled.div`
-  display: none;
+interface PlanetImageProps {
+  path?: string;
+}
+
+const PlanetImage = styled.div<PlanetImageProps>`
   width: 100%;
-  height: 50px;
-  padding: 0px 24px 0px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  color: white;
-
-  @media (max-width: 680px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-`;
-
-const Option = styled.div`
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-
-  h2 {
-    align-self: center;
-  }
-`;
-
-const Highlight = styled.span`
-  display: block;
-  align-self: flex-end;
-  width: 100%;
-  height: 4px;
-  background: red;
-  /* margin-top: 20px; */
+  height: 300px;
+  background-image: url(${({ path }) => [path]});
+  background-repeat: no-repeat;
 `;

@@ -1,9 +1,11 @@
+import React from "react";
+
 interface PlanetDetails {
   content: string;
   source: string;
 }
 
-interface Images {
+export interface Images {
   planet: string;
   internal: string;
   geology: string;
@@ -20,4 +22,9 @@ export interface PlanetsData {
   temperature: string;
   color: string;
   images: Images;
+}
+
+export interface PlanetOptionsProps {
+  option: string;
+  setOption: React.Dispatch<React.SetStateAction<string>>;
 }

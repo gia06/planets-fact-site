@@ -3,7 +3,7 @@ import styled from "styled-components";
 import useFetch from "../hooks/useFetch";
 import { LinkContainerProps } from "../type/stylesType";
 import { NavBarProps } from "../type/navBarProps";
-import BurgerIcon from "../burger/BurgerIcon";
+import BurgerIcon from "./burger/BurgerIcon";
 
 function Navbar({ showBurgerMenu, setShowBurgerMenu }: NavBarProps) {
   const { planetsData } = useFetch();
@@ -106,7 +106,6 @@ const PlanetsContainer = styled.div`
 const LinkContainer = styled.div<LinkContainerProps>`
   display: flex;
   flex-direction: column;
-  height: 100%;
 
   span {
     width: 100%;
@@ -121,22 +120,15 @@ const LinkContainer = styled.div<LinkContainerProps>`
     opacity: ${({ planet, route }) => (planet === route ? 1 : 0.75)};
   }
 
-  :hover {
-    span {
-      background: ${({ color }) => color};
-    }
+  @media (min-width: 776px) {
+    :hover {
+      span {
+        background: ${({ color }) => color};
+      }
 
-    a {
-      opacity: 1;
+      a {
+        opacity: 1;
+      }
     }
   }
 `;
-
-// const BurgerIcon = styled.img`
-//   display: none;
-
-//   @media (max-width: 680px) {
-//     display: flex;
-//     align-self: center;
-//   }
-// `;
