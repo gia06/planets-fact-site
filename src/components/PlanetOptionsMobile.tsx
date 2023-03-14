@@ -10,8 +10,6 @@ function PlanetOptionsMobile({ option, setOption }: PlanetOptionsProps) {
   const planet = useLocation().pathname.slice(1);
   const { currentPlanet } = useCurrentPlanet(planet);
 
-  // const [option, setOption] = useState<string>("overview");
-
   return (
     <div>
       <PlanetOptions>

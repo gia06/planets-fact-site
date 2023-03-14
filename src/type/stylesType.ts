@@ -16,3 +16,7 @@ export interface HighlightProps {
   currentColor: string | undefined;
   isHighlighted: boolean;
 }
+
+export interface PlanetImageProps {
+  path?: string;
+}
