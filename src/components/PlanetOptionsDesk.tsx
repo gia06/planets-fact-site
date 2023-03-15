@@ -7,7 +7,7 @@ import { HighlightProps } from "../type/stylesType";
 
 function PlanetOptionsDesk({ option, setOption }: PlanetOptionsProps) {
   const location = useLocation().pathname.slice(1);
-  const { currentPlanet } = useCurrentPlanet(location);
+  const { currentPlanet } = useCurrentPlanet();
 
   return (
     <OptionsContainer>
@@ -47,6 +47,7 @@ const OptionsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 
   @media (max-width: 680px) {
     display: none;
@@ -68,7 +69,6 @@ const Option = styled.div<HighlightProps>`
 
   p {
     margin-left: 28px;
-
     font-family: "League Spartan";
     font-weight: 700;
     font-size: 12px;
@@ -82,6 +82,12 @@ const Option = styled.div<HighlightProps>`
   }
 
   @media (max-width: 775px) {
+    p {
+      font-size: 9px;
+      line-height: 25px;
+      letter-spacing: 1.92857px;
+    }
+
     :hover {
       background: rgba(216, 216, 216, 0.2);
       border: none;

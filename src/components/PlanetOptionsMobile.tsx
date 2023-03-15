@@ -1,14 +1,11 @@
 // import { useState } from "react";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import useCurrentPlanet from "../hooks/useCurrentPlanet";
 import { PlanetOptionsProps } from "../type/planetsType";
 import { HighlightProps } from "../type/stylesType";
 
 function PlanetOptionsMobile({ option, setOption }: PlanetOptionsProps) {
-  const planet = useLocation().pathname.slice(1);
-  const { currentPlanet } = useCurrentPlanet(planet);
+  const { currentPlanet } = useCurrentPlanet();
 
   return (
     <div>

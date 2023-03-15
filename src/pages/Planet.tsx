@@ -5,12 +5,15 @@ import PlanetOptionsMobile from "../components/PlanetOptionsMobile";
 import useCurrentPlanet from "../hooks/useCurrentPlanet";
 import sourceIcon from "../assets/icon-source.svg";
 import PlanetOptionsDesk from "../components/PlanetOptionsDesk";
+import PlanetStats from "../components/PlanetStats";
 
 function Planet() {
   const planet = useLocation().pathname.slice(1);
 
+  console.log(window.innerHeight);
+
   const [option, setOption] = useState<string>("overview");
-  const { currentPlanet, imgPath } = useCurrentPlanet(planet, option);
+  const { currentPlanet, imgPath } = useCurrentPlanet(option);
 
   return (
     <div>
@@ -34,9 +37,12 @@ function Planet() {
               </a>
             </p>
           </PlanetInfo>
+
           <PlanetOptionsDesk option={option} setOption={setOption} />
         </PlanetInfoContainer>
       </PlanetContainer>
+
+      <PlanetStats />
     </div>
   );
 }
@@ -46,12 +52,17 @@ export default Planet;
 const PlanetContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 80%;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  width: 90%;
+  /* height: calc(100vh - 192px); */
   margin: 126px 165px 0px auto;
 
   @media (max-width: 775px) {
     flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-evenly;
+
     margin: 0 auto;
     /* justify-content: space-evenly; */
 
@@ -66,6 +77,13 @@ const PlanetImage = styled.div`
   justify-content: center;
   width: 100%;
   align-items: center;
+
+  img {
+    @media (max-width: 775px) {
+      max-width: 422px;
+      max-height: 422px;
+    }
+  }
 `;
 
 const PlanetInfoContainer = styled.div`
@@ -76,10 +94,16 @@ const PlanetInfoContainer = styled.div`
 
   @media (max-width: 775px) {
     flex-direction: row;
-    /* margin: 79px auto; */
-    margin-top: 79px;
+    justify-content: space-between;
+    max-width: unset;
+    margin: 0 auto;
     gap: 69px;
     align-items: center;
+  }
+
+  @media (max-width: 680px) {
+    flex-direction: row;
+    /* justify-content: center; */
   }
 `;
 
@@ -95,6 +119,11 @@ const PlanetInfo = styled.div`
     font-weight: 400;
     font-size: 14px;
     line-height: 25px;
+
+    @media (max-width: 775px) {
+      font-size: 11px;
+      line-height: 22px;
+    }
   }
 
   #source {
@@ -106,31 +135,24 @@ const PlanetInfo = styled.div`
     font-weight: 400;
     font-size: 14px;
     line-height: 25px;
+
+    @media (max-width: 680px) {
+      align-self: center;
+    }
   }
 
   #source > a {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    /* margin-right: 8px; */
     color: white;
-    /* opacity: 0.5; */
     font-weight: 700;
     text-decoration: underline;
 
     img {
       margin-left: 8px;
     }
-
-    /* font-family: "League Spartan";
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 25px; */
   }
-
-  /* @media (max-width: 775px) {
-    flex-direction: row;
-  } */
 `;
 
 const PlanetHeader = styled.h1`
@@ -140,4 +162,14 @@ const PlanetHeader = styled.h1`
   font-size: 80px;
   line-height: 104px;
   text-transform: uppercase;
+
+  @media (max-width: 775px) {
+    font-size: 48px;
+    line-height: 62px;
+  }
+
+  @media (max-width: 680px) {
+    font-size: 40px;
+    line-height: 52px;
+  }
 `;
