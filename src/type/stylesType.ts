@@ -11,3 +11,17 @@ export interface CircleProps {
 export interface BurgerSvgProps {
   showBurgerMenu: boolean;
 }
+
+export interface HighlightProps {
+  currentColor: string | undefined;
+  isHighlighted: boolean;
+}
+
+export interface PlanetImageProps {
+  path?: string;
+}
+
+export interface PlanetImageProps {
+  tabletSize: number;
+  mobileSize: number;
+}

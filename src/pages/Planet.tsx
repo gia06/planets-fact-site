@@ -1,68 +1,73 @@
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import styled from "styled-components";
+import PlanetOptionsMobile from "../components/PlanetOptionsMobile";
+import useCurrentPlanet from "../hooks/useCurrentPlanet";
+import PlanetStats from "../components/PlanetStats";
+import PlanetInfo from "../components/PlanetInfo";
+import { PlanetImageProps } from "../type/stylesType";
 
 function Planet() {
-  const { pathname } = useLocation();
-  const planet = pathname.slice(1);
-  console.log(planet);
+  const [option, setOption] = useState<string>("overview");
+  const { currentPlanet, imgPath } = useCurrentPlanet(option);
+
+  console.log(currentPlanet?.maxSize.tablet);
 
   return (
-    <div>
-      <PlanetOptions>
-        <Option>
-          <h2>Overview</h2>
-          <Highlight></Highlight>
-        </Option>
+    <div style={{}}>
+      <PlanetOptionsMobile option={option} setOption={setOption} />
 
-        <Option>
-          <h2>Structure</h2>
-          <Highlight></Highlight>
-        </Option>
+      {currentPlanet ? (
+        <PlanetContainer>
+          <PlanetImage
+            tabletSize={currentPlanet.maxSize.tablet}
+            mobileSize={currentPlanet.maxSize.mobile}
+          >
+            {imgPath ? <img src={imgPath} alt="image of the planet" /> : null}
+          </PlanetImage>
 
-        <Option>
-          <h2>Surface</h2>
-          <Highlight></Highlight>
-        </Option>
-      </PlanetOptions>
+          <PlanetInfo
+            currentPlanet={currentPlanet}
+            option={option}
+            setOption={setOption}
+          />
+        </PlanetContainer>
+      ) : null}
 
-      {planet}
+      <PlanetStats />
     </div>
   );
 }
 
 export default Planet;
 
-const PlanetOptions = styled.div`
-  display: none;
-  width: 100%;
-  height: 50px;
-  padding: 0px 24px 0px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  color: white;
-
-  @media (max-width: 680px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-`;
-
-const Option = styled.div`
+const PlanetContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  /* align-items: center; */
+  flex-direction: row;
+  width: 90%;
+  margin: 0px auto 0px auto;
 
-  h2 {
-    align-self: center;
+  @media (max-width: 775px) {
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 auto;
   }
 `;
 
-const Highlight = styled.span`
-  display: block;
-  align-self: flex-end;
+const PlanetImage = styled.div<PlanetImageProps>`
+  display: flex;
+  justify-content: center;
   width: 100%;
-  height: 4px;
-  background: red;
-  /* margin-top: 20px; */
+  align-items: center;
+
+  img {
+    @media (max-width: 775px) {
+      max-width: ${({ tabletSize }) => `${tabletSize}px`};
+      max-height: ${({ tabletSize }) => `${tabletSize}px`};
+    }
+
+    @media (max-width: 680px) {
+      max-width: ${({ mobileSize }) => `${mobileSize}px`};
+      max-height: ${({ mobileSize }) => `${mobileSize}px`};
+    }
+  }
 `;

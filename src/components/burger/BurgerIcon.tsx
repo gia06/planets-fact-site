@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { BurgerIconProps } from "../type/burgerProps";
-import { BurgerSvgProps } from "../type/stylesType";
+import { BurgerIconProps } from "../../type/burgerProps";
+import { BurgerSvgProps } from "../../type/stylesType";
 
 function BurgerIcon({ showBurgerMenu, setShowBurgerMenu }: BurgerIconProps) {
   return (

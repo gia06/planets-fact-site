@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import useFetch from "../hooks/useFetch";
-import chevronIcon from "../assets/icon-chevron.svg";
-import { BurgerMenuProps } from "../type/burgerProps";
+import useFetch from "../../hooks/useFetch";
+import chevronIcon from "../../assets/icon-chevron.svg";
+import { BurgerMenuProps } from "../../type/burgerProps";
 
 function BurgerMenu({ setShowBurgerMenu }: BurgerMenuProps) {
   const { planetsData } = useFetch();
@@ -63,7 +63,7 @@ const PlanetsContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 20px;
     color: white;
 
