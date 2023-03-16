@@ -11,6 +11,11 @@ export interface Images {
   geology: string;
 }
 
+interface MaxSize {
+  tablet: number;
+  mobile: number;
+}
+
 export interface PlanetsData {
   name: string;
   overview: PlanetDetails;
@@ -21,10 +26,15 @@ export interface PlanetsData {
   radius: string;
   temperature: string;
   color: string;
+  maxSize: MaxSize;
   images: Images;
 }
 
 export interface PlanetOptionsProps {
   option: string;
   setOption: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export interface PlanetInfoProps extends PlanetOptionsProps {
+  currentPlanet: PlanetsData | null;
 }

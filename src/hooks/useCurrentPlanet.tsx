@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import data from "../data/data.json";
 import { PlanetsData } from "../type/planetsType";
@@ -10,7 +10,6 @@ function useCurrentPlanet(option?: string) {
   let images: Images;
 
   const loc = useLocation().pathname.slice(1);
-  console.log(loc);
 
   const setPlanetData = (planet: PlanetsData) => {
     setCurrentPlanet(planet);
@@ -25,7 +24,6 @@ function useCurrentPlanet(option?: string) {
       case "structure":
         setImgPath(images.internal.replace(".", "src"));
         break;
-
       case "surface":
         setImgPath(images.geology.replace(".", "src"));
         break;

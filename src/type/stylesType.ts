@@ -20,3 +20,8 @@ export interface HighlightProps {
 export interface PlanetImageProps {
   path?: string;
 }
+
+export interface PlanetImageProps {
+  tabletSize: number;
+  mobileSize: number;
+}

@@ -6,7 +6,6 @@ import { PlanetOptionsProps } from "../type/planetsType";
 import { HighlightProps } from "../type/stylesType";
 
 function PlanetOptionsDesk({ option, setOption }: PlanetOptionsProps) {
-  const location = useLocation().pathname.slice(1);
   const { currentPlanet } = useCurrentPlanet();
 
   return (
@@ -81,7 +80,7 @@ const Option = styled.div<HighlightProps>`
     }
   }
 
-  @media (max-width: 775px) {
+  @media (min-width: 775px) {
     p {
       font-size: 9px;
       line-height: 25px;
@@ -89,9 +88,9 @@ const Option = styled.div<HighlightProps>`
     }
 
     :hover {
+      cursor: pointer;
       background: rgba(216, 216, 216, 0.2);
       border: none;
-      cursor: pointer;
     }
   }
 `;

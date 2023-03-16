@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -17,7 +16,8 @@ function Root() {
       />
       {showBurgerMenu ? (
         <BurgerMenu setShowBurgerMenu={setShowBurgerMenu} />
-      ) : null}
+      ) : // <Outlet />
+      null}
       <Outlet />
     </>
   );

@@ -78,7 +78,7 @@ const NavbarContainer = styled.div`
   }
 `;
 
-const PlanetsContainer = styled.div`
+const PlanetsContainer = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
