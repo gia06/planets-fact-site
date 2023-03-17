@@ -16,20 +16,6 @@ function useCurrentPlanet(option?: string) {
     images = planet.images;
   };
 
-  // const filterOptions = (option: string) => {
-  //   switch (option) {
-  //     default:
-  //       setImgPath(images.planet.replace(".", "/src"));
-  //       break;
-  //     case "structure":
-  //       setImgPath(images.internal.replace(".", "/src"));
-  //       break;
-  //     case "surface":
-  //       setImgPath(images.geology.replace(".", "/src"));
-  //       break;
-  //   }
-  // };
-
   const filterOptions = (option: string) => {
     switch (option) {
       default:

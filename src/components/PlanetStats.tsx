@@ -37,7 +37,6 @@ export default PlanetStats;
 
 const StatsContainer = styled.div`
   display: flex;
-  /* justify-content: space-between; */
   gap: 30px;
   width: 90%;
   margin: 61px auto 0px auto;
@@ -50,17 +49,14 @@ const StatsContainer = styled.div`
 `;
 
 const Stat = styled.div`
-  width: 255px;
   width: 100%;
-  /* max-width: 255px; */
   height: 128px;
   color: white;
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 20px 9px 27px 23px;
 
-  @media (max-width: 870px) {
-    width: 164px;
+  @media (max-width: 945px) {
     height: 88px;
 
     p {

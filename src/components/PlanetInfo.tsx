@@ -4,7 +4,6 @@ import { PlanetInfoProps } from "../type/planetsType";
 import PlanetOptionsDesk from "./PlanetOptionsDesk";
 
 function PlanetInfo({ currentPlanet, option, setOption }: PlanetInfoProps) {
-  console.log(sourceIcon);
   return (
     <InfoContainer>
       <Info>
@@ -34,7 +33,7 @@ const InfoContainer = styled.div`
   max-width: 350px;
   margin-top: 126px;
 
-  @media (max-width: 775px) {
+  @media (max-width: 945px) {
     flex-direction: row;
     justify-content: space-between;
     max-width: unset;
@@ -66,7 +65,7 @@ const Info = styled.div`
     font-size: 14px;
     line-height: 25px;
 
-    @media (max-width: 775px) {
+    @media (max-width: 945px) {
       font-size: 11px;
       line-height: 22px;
     }
@@ -109,7 +108,7 @@ const PlanetHeader = styled.h1`
   line-height: 104px;
   text-transform: uppercase;
 
-  @media (max-width: 775px) {
+  @media (max-width: 945px) {
     font-size: 48px;
     line-height: 62px;
   }

@@ -9,7 +9,6 @@ import { PlanetImageProps } from "../type/stylesType";
 function Planet() {
   const [option, setOption] = useState<string>("overview");
   const { currentPlanet, imgPath } = useCurrentPlanet(option);
-  console.log(imgPath);
 
   return (
     <PlanetContainer>
@@ -23,8 +22,6 @@ function Planet() {
           >
             {imgPath ? <img src={imgPath} alt="image of the planet" /> : null}
           </PlanetImage>
-
-          {/* <img src="./geology-earth.png" /> */}
 
           <PlanetInfo
             currentPlanet={currentPlanet}
@@ -45,7 +42,7 @@ const PlanetContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 775px) {
+  @media (max-width: 945px) {
     /* display: flex; */
     height: calc(100vh - 192px);
     /* justify-content: space-around; */
@@ -62,7 +59,7 @@ const PlanetInfoContainer = styled.div`
   width: 90%;
   margin: 0 auto;
 
-  @media (max-width: 775px) {
+  @media (max-width: 945px) {
     /* height: 75%; */
     flex-direction: column;
     justify-content: space-around;
@@ -80,7 +77,7 @@ const PlanetImage = styled.div<PlanetImageProps>`
   align-items: center;
 
   img {
-    @media (max-width: 775px) {
+    @media (max-width: 945px) {
       max-width: ${({ tabletSize }) => `${tabletSize}px`};
       max-height: ${({ tabletSize }) => `${tabletSize}px`};
     }
