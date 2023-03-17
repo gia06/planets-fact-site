@@ -4,6 +4,7 @@ import { PlanetInfoProps } from "../type/planetsType";
 import PlanetOptionsDesk from "./PlanetOptionsDesk";
 
 function PlanetInfo({ currentPlanet, option, setOption }: PlanetInfoProps) {
+  console.log(sourceIcon);
   return (
     <InfoContainer>
       <Info>

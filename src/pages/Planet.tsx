@@ -9,15 +9,14 @@ import { PlanetImageProps } from "../type/stylesType";
 function Planet() {
   const [option, setOption] = useState<string>("overview");
   const { currentPlanet, imgPath } = useCurrentPlanet(option);
-
-  console.log(currentPlanet?.maxSize.tablet);
+  console.log(imgPath);
 
   return (
-    <div style={{}}>
+    <PlanetContainer>
       <PlanetOptionsMobile option={option} setOption={setOption} />
 
       {currentPlanet ? (
-        <PlanetContainer>
+        <PlanetInfoContainer>
           <PlanetImage
             tabletSize={currentPlanet.maxSize.tablet}
             mobileSize={currentPlanet.maxSize.mobile}
@@ -25,16 +24,18 @@ function Planet() {
             {imgPath ? <img src={imgPath} alt="image of the planet" /> : null}
           </PlanetImage>
 
+          {/* <img src=/> */}
+
           <PlanetInfo
             currentPlanet={currentPlanet}
             option={option}
             setOption={setOption}
           />
-        </PlanetContainer>
+        </PlanetInfoContainer>
       ) : null}
 
       <PlanetStats />
-    </div>
+    </PlanetContainer>
   );
 }
 
@@ -42,14 +43,33 @@ export default Planet;
 
 const PlanetContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  width: 90%;
-  margin: 0px auto 0px auto;
+  flex-direction: column;
 
   @media (max-width: 775px) {
+    /* display: flex; */
+    height: calc(100vh - 192px);
+    /* justify-content: space-around; */
+  }
+
+  @media (max-width: 680px) {
+    height: calc(100vh - 68px);
+  }
+`;
+
+const PlanetInfoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0 auto;
+
+  @media (max-width: 775px) {
+    /* height: 75%; */
     flex-direction: column;
-    justify-content: space-evenly;
-    margin: 0 auto;
+    justify-content: space-around;
+  }
+
+  @media (max-width: 680px) {
+    height: 65%;
   }
 `;
 

@@ -19,13 +19,13 @@ function useCurrentPlanet(option?: string) {
   const filterOptions = (option: string) => {
     switch (option) {
       default:
-        setImgPath(images.planet.replace(".", "src"));
+        setImgPath(images.planet.replace(".", "/src"));
         break;
       case "structure":
-        setImgPath(images.internal.replace(".", "src"));
+        setImgPath(images.internal.replace(".", "/src"));
         break;
       case "surface":
-        setImgPath(images.geology.replace(".", "src"));
+        setImgPath(images.geology.replace(".", "/src"));
         break;
     }
   };
