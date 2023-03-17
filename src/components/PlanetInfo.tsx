@@ -1,4 +1,4 @@
-import sourceIcon from "../assets/icon-source.svg";
+import sourceIcon from "/assets/icon-source.svg";
 import styled from "styled-components";
 import { PlanetInfoProps } from "../type/planetsType";
 import PlanetOptionsDesk from "./PlanetOptionsDesk";

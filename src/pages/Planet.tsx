@@ -24,7 +24,7 @@ function Planet() {
             {imgPath ? <img src={imgPath} alt="image of the planet" /> : null}
           </PlanetImage>
 
-          {/* <img src=/> */}
+          {/* <img src="./geology-earth.png" /> */}
 
           <PlanetInfo
             currentPlanet={currentPlanet}
