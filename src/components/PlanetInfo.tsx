@@ -33,7 +33,7 @@ const InfoContainer = styled.div`
   max-width: 350px;
   margin-top: 126px;
 
-  @media (max-width: 945px) {
+  @media (max-width: 1130px) {
     flex-direction: row;
     justify-content: space-between;
     max-width: unset;
@@ -65,7 +65,7 @@ const Info = styled.div`
     font-size: 14px;
     line-height: 25px;
 
-    @media (max-width: 945px) {
+    @media (max-width: 1130px) {
       font-size: 11px;
       line-height: 22px;
     }
@@ -108,7 +108,7 @@ const PlanetHeader = styled.h1`
   line-height: 104px;
   text-transform: uppercase;
 
-  @media (max-width: 945px) {
+  @media (max-width: 1130px) {
     font-size: 48px;
     line-height: 62px;
   }

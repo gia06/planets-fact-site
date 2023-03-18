@@ -25,7 +25,8 @@ function useCurrentPlanet(option?: string) {
         setImgPath(images.internal);
         break;
       case "surface":
-        setImgPath(images.geology);
+        // setImgPath(images.geology);
+        setImgPath(images.planet);
         break;
     }
   };

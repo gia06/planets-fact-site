@@ -39,7 +39,7 @@ const StatsContainer = styled.div`
   display: flex;
   gap: 30px;
   width: 90%;
-  margin: 61px auto 0px auto;
+  margin: 61px auto 20px auto;
 
   @media (max-width: 680px) {
     flex-direction: column;
@@ -56,7 +56,7 @@ const Stat = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 20px 9px 27px 23px;
 
-  @media (max-width: 945px) {
+  @media (max-width: 1130px) {
     height: 88px;
 
     p {

@@ -1,5 +1,4 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import useCurrentPlanet from "../hooks/useCurrentPlanet";
 import { PlanetOptionsProps } from "../type/planetsType";
@@ -80,7 +79,7 @@ const Option = styled.div<HighlightProps>`
     }
   }
 
-  @media (min-width: 775px) {
+  @media (min-width: 1130px) {
     p {
       font-size: 9px;
       line-height: 25px;
