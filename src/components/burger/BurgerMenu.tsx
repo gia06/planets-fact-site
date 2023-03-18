@@ -32,6 +32,7 @@ export default BurgerMenu;
 
 const BurgerWrapper = styled.div`
   display: none;
+  z-index: 2;
 
   @media (max-width: 680px) {
     display: block;

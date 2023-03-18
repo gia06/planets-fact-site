@@ -1,4 +1,5 @@
 import React from "react";
+import { ImageProps } from "./stylesType";
 
 interface PlanetDetails {
   content: string;
@@ -37,4 +38,8 @@ export interface PlanetOptionsProps {
 
 export interface PlanetInfoProps extends PlanetOptionsProps {
   currentPlanet: PlanetsData | null;
+}
+
+export interface PlanetImageProps extends ImageProps {
+  option: string;
 }

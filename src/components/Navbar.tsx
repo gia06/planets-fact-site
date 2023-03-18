@@ -58,7 +58,7 @@ const NavbarContainer = styled.div`
     align-self: center;
   }
 
-  @media (max-width: 775px) {
+  @media (max-width: 1130px) {
     flex-direction: column;
     height: auto;
 
@@ -93,7 +93,7 @@ const PlanetsContainer = styled.nav`
     text-transform: uppercase;
   }
 
-  @media (max-width: 775px) {
+  @media (max-width: 1130px) {
     margin-top: 39px;
     margin-bottom: 27px;
   }
@@ -120,7 +120,7 @@ const LinkContainer = styled.div<LinkContainerProps>`
     opacity: ${({ planet, route }) => (planet === route ? 1 : 0.75)};
   }
 
-  @media (min-width: 776px) {
+  @media (min-width: 1130px) {
     :hover {
       span {
         background: ${({ color }) => color};

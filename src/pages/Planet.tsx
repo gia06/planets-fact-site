@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import PlanetOptionsMobile from "../components/PlanetOptionsMobile";
 import useCurrentPlanet from "../hooks/useCurrentPlanet";
 import PlanetStats from "../components/PlanetStats";
 import PlanetInfo from "../components/PlanetInfo";
-import { PlanetImageProps } from "../type/stylesType";
+// import { PlanetImageProps } from "../type/stylesType";
+import useElementWidth from "../hooks/useElementWidth";
+import PlanetImage from "../components/PlanetImage";
 
 function Planet() {
   const [option, setOption] = useState<string>("overview");
-  const { currentPlanet, imgPath } = useCurrentPlanet(option);
+  const { currentPlanet } = useCurrentPlanet(option);
 
   return (
     <PlanetContainer>
@@ -19,9 +21,8 @@ function Planet() {
           <PlanetImage
             tabletSize={currentPlanet.maxSize.tablet}
             mobileSize={currentPlanet.maxSize.mobile}
-          >
-            {imgPath ? <img src={imgPath} alt="image of the planet" /> : null}
-          </PlanetImage>
+            option={option}
+          />
 
           <PlanetInfo
             currentPlanet={currentPlanet}
@@ -42,10 +43,8 @@ const PlanetContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 945px) {
-    /* display: flex; */
+  @media (max-width: 1130px) {
     height: calc(100vh - 192px);
-    /* justify-content: space-around; */
   }
 
   @media (max-width: 680px) {
@@ -59,32 +58,13 @@ const PlanetInfoContainer = styled.div`
   width: 90%;
   margin: 0 auto;
 
-  @media (max-width: 945px) {
-    /* height: 75%; */
+  @media (max-width: 1130px) {
+    height: 100%;
     flex-direction: column;
     justify-content: space-around;
   }
 
   @media (max-width: 680px) {
     height: 65%;
-  }
-`;
-
-const PlanetImage = styled.div<PlanetImageProps>`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  align-items: center;
-
-  img {
-    @media (max-width: 945px) {
-      max-width: ${({ tabletSize }) => `${tabletSize}px`};
-      max-height: ${({ tabletSize }) => `${tabletSize}px`};
-    }
-
-    @media (max-width: 680px) {
-      max-width: ${({ mobileSize }) => `${mobileSize}px`};
-      max-height: ${({ mobileSize }) => `${mobileSize}px`};
-    }
   }
 `;

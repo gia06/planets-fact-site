@@ -17,11 +17,11 @@ export interface HighlightProps {
   isHighlighted: boolean;
 }
 
-export interface PlanetImageProps {
-  path?: string;
-}
+// export interface PlanetImageProps {
+//   path?: string;
+// }
 
-export interface PlanetImageProps {
+export interface ImageProps {
   tabletSize: number;
   mobileSize: number;
 }
