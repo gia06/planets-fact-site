@@ -41,11 +41,6 @@ const InfoContainer = styled.div`
     gap: 69px;
     align-items: center;
   }
-
-  @media (max-width: 680px) {
-    /* flex-direction: row; */
-    /* justify-content: center; */
-  }
 `;
 
 const Info = styled.div`

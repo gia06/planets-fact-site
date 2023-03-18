@@ -16,8 +16,7 @@ function Root() {
       />
       {showBurgerMenu ? (
         <BurgerMenu setShowBurgerMenu={setShowBurgerMenu} />
-      ) : // <Outlet />
-      null}
+      ) : null}
       <Outlet />
     </>
   );

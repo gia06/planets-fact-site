@@ -4,8 +4,6 @@ import PlanetOptionsMobile from "../components/PlanetOptionsMobile";
 import useCurrentPlanet from "../hooks/useCurrentPlanet";
 import PlanetStats from "../components/PlanetStats";
 import PlanetInfo from "../components/PlanetInfo";
-// import { PlanetImageProps } from "../type/stylesType";
-import useElementWidth from "../hooks/useElementWidth";
 import PlanetImage from "../components/PlanetImage";
 
 function Planet() {
