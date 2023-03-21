@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import useFetch from "../../hooks/useFetch";
 import chevronIcon from "/assets/icon-chevron.svg";
-import { BurgerMenuProps } from "../../type/burgerProps";
+import { BurgerMenuProps } from "../../types/burgerProps";
 
 function BurgerMenu({ setShowBurgerMenu }: BurgerMenuProps) {
   const { planetsData } = useFetch();

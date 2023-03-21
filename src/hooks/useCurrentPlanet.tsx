@@ -1,8 +1,8 @@
 import { useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import data from "../data/data.json";
-import { PlanetsData } from "../type/planetsType";
-import { Images } from "../type/planetsType";
+import { PlanetsData } from "../types/planetsType";
+import { Images } from "../types/planetsType";
 
 function useCurrentPlanet(option?: string) {
   const [currentPlanet, setCurrentPlanet] = useState<null | PlanetsData>(null);

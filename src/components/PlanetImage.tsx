@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import styled from "styled-components";
 import useCurrentPlanet from "../hooks/useCurrentPlanet";
-import { PlanetImageProps } from "../type/planetsType";
-import { ImageProps } from "../type/stylesType";
+import { PlanetImageProps } from "../types/planetsType";
+import { ImageProps } from "../types/stylesType";
 
 function PlanetImage({ tabletSize, mobileSize, option }: PlanetImageProps) {
   const { currentPlanet, imgPath } = useCurrentPlanet(option);

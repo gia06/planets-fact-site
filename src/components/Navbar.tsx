@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import useFetch from "../hooks/useFetch";
-import { LinkContainerProps } from "../type/stylesType";
-import { NavBarProps } from "../type/navBarProps";
+import { LinkContainerProps } from "../types/stylesType";
+import { NavBarProps } from "../types/navBarProps";
 import BurgerIcon from "./burger/BurgerIcon";
 
 function Navbar({ showBurgerMenu, setShowBurgerMenu }: NavBarProps) {

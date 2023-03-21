@@ -1,8 +1,8 @@
 // import { useState } from "react";
 import styled from "styled-components";
 import useCurrentPlanet from "../hooks/useCurrentPlanet";
-import { PlanetOptionsProps } from "../type/planetsType";
-import { HighlightProps } from "../type/stylesType";
+import { PlanetOptionsProps } from "../types/planetsType";
+import { HighlightProps } from "../types/stylesType";
 
 function PlanetOptionsMobile({ option, setOption }: PlanetOptionsProps) {
   const { currentPlanet } = useCurrentPlanet();

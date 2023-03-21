@@ -1,6 +1,6 @@
 import sourceIcon from "/assets/icon-source.svg";
 import styled from "styled-components";
-import { PlanetInfoProps } from "../type/planetsType";
+import { PlanetInfoProps } from "../types/planetsType";
 import PlanetOptionsDesk from "./PlanetOptionsDesk";
 
 function PlanetInfo({ currentPlanet, option, setOption }: PlanetInfoProps) {
