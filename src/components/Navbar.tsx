@@ -22,7 +22,7 @@ function Navbar({ showBurgerMenu, setShowBurgerMenu }: NavBarProps) {
             color={planet.color}
           >
             <span></span>
-            <Link to={`${planet.name}`}>{planet.name}</Link>
+            <Link to={planet.name}>{planet.name}</Link>
           </LinkContainer>
         ))}
       </PlanetsContainer>
