@@ -23,7 +23,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution on Github](https://github.com/gia06/github-user-search)
-- Live Site URL: [Live Site](https://roaring-vacherin-152868.netlify.app)
+- Live Site URL: [Live Site]([https://roaring-vacherin-152868.netlify.app](https://planets-facts-12.netlify.app/Mercury))
 
 
 ## Built with
